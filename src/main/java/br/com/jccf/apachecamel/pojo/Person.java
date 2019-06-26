@@ -1,4 +1,4 @@
-package br.com.jccf.apachecamel.marshal;
+package br.com.jccf.apachecamel.pojo;
 
 public class Person {
 
@@ -19,5 +19,11 @@ public class Person {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Age: " + this.age +
+                " Name: " + this.name;
     }
 }

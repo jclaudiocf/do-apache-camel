@@ -1,19 +1,20 @@
-package br.com.jccf.apachecamel.marshal;
+package br.com.jccf.apachecamel.csv2xml;
 
+import br.com.jccf.apachecamel.pojo.Person;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.dataformat.xstream.XStreamDataFormat;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SampleMarshalRoute extends RouteBuilder {
+public class Csv2XmlRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
         from("direct:marshalInput")
                 .log("Body message is ${body}")
-                .process(new SampleMarshalProcessor())
-//                .marshal().xstream()
+                .process(new Csv2XmlProcessor())
+//                .csv2xml().xstream()
                 .marshal(populateXStreamDef())
                 .to("log:?level=INFO&showBody=True")
                 .to("mock:output");
