@@ -1,2 +1,1 @@
-# Project
-> Repository to Apache Camel study
+> Apache Camel study repository
